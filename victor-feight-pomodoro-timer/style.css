@@ -1,0 +1,102 @@
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: #8E24AA;
+    background: linear-gradient(45deg,  #daebff 0%,#b7dcff 50%,#93beff 100%);
+}
+
+/* take care of box-sizing for every element */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body { 
+    margin: 0;
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+}
+
+.display__time-left {
+    font-weight: 100;
+    /* rem units reference to the root font size */
+    font-size: 20rem;
+    margin: 0;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+/* define flex container */
+.timer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+/* sub-flex container */
+.timer__controls {
+    display: flex;
+}
+
+/* select all child elements, grow elements to width */
+/* flex-grow 1, flex-shrink 1, flex-basis 0 */
+.timer__controls > * {
+    flex: 1;
+}
+
+/* sub-sub-flex container */
+.timer__controls form {
+    flex: 1;
+    display: flex;
+}
+
+/* flex-grow 1, flex-shrink 1, flex-basis 0 */
+.timer__controls input {
+    flex: 1;
+    border: 0;
+    padding: 2rem;
+}
+
+/* all button flex item settings */
+.timer__button {
+    background: none;
+    border: 0;
+    /* change cursor icon */
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    /* creates interesting transluscent header */
+    background: rgba(0,0,0,0.1);
+    border-bottom: 3px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0,0,0,0.2);
+    padding: 1rem;
+    font-family: 'Inconsolata', monospace;
+}
+
+/* hover shade effect */
+.timer__button:hover,
+.timer__button:focus {
+    background: rgba(0,0,0,0.2);
+    outline: 0;
+}
+
+/* flex item for time left */
+.display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* center display vertical and horizontally */
+    align-items: center;
+    justify-content: center;
+}
+
+.display__end-time {
+    font-size: 6rem;
+    font-weight: bold;
+    color: white;
+    /* text-shadow: 4px 4px 0 rgba(0,0,0,0.05); */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
